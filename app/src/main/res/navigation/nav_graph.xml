@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainPage">
+
+    <fragment
+        android:id="@+id/mainPage"
+        android:name="com.release.spaceguide.adapters.presentation.ui.MainPage"
+        android:label="fragment_main_page"
+        tools:layout="@layout/fragment_main_page"
+        >
+        <action
+            android:id="@+id/action_mainPage_to_explorePage"
+            app:destination="@id/explorePage"
+            app:enterAnim="@anim/exit_anim_two"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/explorePage"
+        android:name="com.release.spaceguide.adapters.presentation.ui.ExplorePage"
+        android:label="fragment_explore_page"
+        tools:layout="@layout/fragment_explore_page" >
+        <action
+            android:id="@+id/action_explorePage_to_favoritesPage"
+            app:destination="@id/favoritesPage"
+            app:enterAnim="@anim/right_to_left"
+            app:exitAnim="@anim/right_to_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoritesPage"
+        android:name="com.release.spaceguide.adapters.presentation.ui.FavoritesPage"
+        android:label="fragment_favorites_page"
+        tools:layout="@layout/fragment_favorites_page" >
+        <action
+            android:id="@+id/action_favoritesPage_to_explorePage"
+            app:destination="@id/explorePage"
+            app:enterAnim="@anim/left_to_right"
+            app:exitAnim="@anim/left_to_right" />
+    </fragment>
+</navigation>
